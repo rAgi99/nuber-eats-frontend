@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { LoginInput } from "./globalTypes";
+
 // ====================================================
 // GraphQL mutation operation: loginMutaion
 // ====================================================
@@ -19,6 +21,5 @@ export interface loginMutaion {
 }
 
 export interface loginMutaionVariables {
-  email: string;
-  password: string;
+  loginInput: LoginInput;
 }
