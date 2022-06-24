@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 import { Header } from "../components/header";
 import { useMe } from "../hooks/userMe";
 import { NotFound } from "../pages/404";
@@ -21,7 +21,7 @@ export const LoggedInRouter = () => {
       <Header />
       <Routes>
         {data.me.role === "Client" && ClientRoutes}
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
