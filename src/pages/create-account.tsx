@@ -46,7 +46,7 @@ export const CreateAccount = () => {
     } = data;
     if (ok) {
       alert("Account Created! Log in Now!");
-      navigate("/login", { replace: true });
+      navigate("/", { replace: true });
     }
   };
   const [createAccountMutation, { loading, data: createAccountMutaionResult }] =
@@ -124,7 +124,7 @@ export const CreateAccount = () => {
         </form>
         <div>
           Already have an account?{" "}
-          <Link to="/login" className="text-lime-600 hover:underline">
+          <Link to="/" className="text-lime-600 hover:underline">
             Log in Now
           </Link>
         </div>
