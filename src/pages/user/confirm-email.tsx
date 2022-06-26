@@ -43,6 +43,7 @@ export const ConfirmEmail = () => {
     }
   );
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, code] = window.location.href.split("code=");
     verifyEmail({
       variables: {
