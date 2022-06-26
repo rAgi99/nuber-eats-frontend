@@ -1,10 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "../components/header";
 import { useMe } from "../hooks/userMe";
+import { NotFound } from "../pages/404";
 import { Restaurants } from "../pages/client/restaurants";
+import { ConfirmEmail } from "../pages/user/confirm-email";
 
-const ClientRoutes = [<Route path="/*" element={<Restaurants />} />];
+const ClientRoutes = [
+  <Route path="/" element={<Restaurants />} />,
+  <Route path="/confirm" element={<ConfirmEmail />} />,
+];
 
 export const LoggedInRouter = () => {
   const { data, loading, error } = useMe();
@@ -20,7 +25,7 @@ export const LoggedInRouter = () => {
       <Header />
       <Routes>
         {data.me.role === "Client" && ClientRoutes}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
