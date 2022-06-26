@@ -7,8 +7,8 @@ import { Restaurants } from "../pages/client/restaurants";
 import { ConfirmEmail } from "../pages/user/confirm-email";
 
 const ClientRoutes = [
-  <Route path="/" element={<Restaurants />} />,
-  <Route path="/confirm" element={<ConfirmEmail />} />,
+  <Route key={1} path="/" element={<Restaurants />} />,
+  <Route key={2} path="/confirm" element={<ConfirmEmail />} />,
 ];
 
 export const LoggedInRouter = () => {
