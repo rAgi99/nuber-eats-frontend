@@ -84,10 +84,10 @@ export const Login = () => {
             placeholder="Email"
             className="input"
           />
-          {errors.email?.message && <FormError errorMessage={errors.email?.message} />}
           {errors.email?.type === "pattern" && (
             <FormError errorMessage={"Please enter a valid email"} />
           )}
+          {errors.email?.message && <FormError errorMessage={errors.email?.message} />}
           <input
             {...register("password", {
               required: "Password is required",
