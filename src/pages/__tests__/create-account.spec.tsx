@@ -9,6 +9,16 @@ import { HelmetProvider } from "react-helmet-async";
 import userEvent from "@testing-library/user-event";
 import { UserRole } from "../../__generated__/globalTypes";
 
+const mockPush = jest.fn();
+
+jest.mock("react-router-dom", () => {
+  const realModule = jest.requireActual("react-router-dom");
+  return {
+    ...realModule,
+    useNavigate: () => mockPush,
+  };
+});
+
 describe("<CreateAccount />", () => {
   let mockedClient: MockApolloClient;
   let renderResult: RenderResult;
@@ -99,5 +109,11 @@ describe("<CreateAccount />", () => {
     await waitFor(() => {
       expect(mutationError).toHaveTextContent("mutation-error");
     });
+    await waitFor(() => {
+      expect(mockPush).toHaveBeenCalledWith("/");
+    });
+  });
+  afterAll(() => {
+    jest.clearAllMocks();
   });
 });
