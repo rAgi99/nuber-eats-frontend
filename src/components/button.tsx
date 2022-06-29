@@ -8,6 +8,7 @@ interface IButtonProps {
 
 export const Button: React.FC<IButtonProps> = ({ canClick, loading, actionText }) => (
   <button
+    role="button"
     className={`text-lg font-medium focus:outline-none text-white py-4 transition-colors ${
       canClick
         ? "bg-emerald-600 hover:bg-emerald-700"
