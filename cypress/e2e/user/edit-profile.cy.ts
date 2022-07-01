@@ -9,6 +9,12 @@ describe("Edit Profile", () => {
     user.title().title().should("eq", "Edit Profile | Nuber Eats");
   });
   it("can change email", () => {
+    user.intercept("POST", "http://localhost:4000/graphql", (req) => {
+      if (req.body?.operationName === "editProfile") {
+        // @ts-ignore
+        req.body?.variables?.input?.email = "gee150@gmail.com";
+      }
+    });
     user.visit("/edit-profile");
     user.findByPlaceholderText(/email/i).clear().type("new@nomadcoders.co");
     user.findByRole("button").click();
