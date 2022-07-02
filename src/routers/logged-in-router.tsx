@@ -7,6 +7,7 @@ import { Category } from "../pages/client/category";
 import { Restaurant } from "../pages/client/restaurant";
 import { Restaurants } from "../pages/client/restaurants";
 import { Search } from "../pages/client/search";
+import { AddRestaurant } from "../pages/owner/add-restaurants";
 import { MyRestaurants } from "../pages/owner/my-restaurants";
 import { ConfirmEmail } from "../pages/user/confirm-email";
 import { EditProfile } from "../pages/user/edit-profile";
@@ -35,7 +36,10 @@ const commonRoutes = [
   { path: "/edit-profile", element: <EditProfile /> },
 ];
 
-const restaurantRoutes = [{ path: "/", element: <MyRestaurants /> }];
+const restaurantRoutes = [
+  { path: "/", element: <MyRestaurants /> },
+  { path: "/add-restaurant", element: <AddRestaurant /> },
+];
 
 export const LoggedInRouter = () => {
   const { data, loading, error } = useMe();
