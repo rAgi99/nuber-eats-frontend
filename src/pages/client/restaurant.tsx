@@ -124,7 +124,7 @@ export const Restaurant = () => {
   const navigate = useNavigate();
   const onCompleted = (data: createOrder) => {
     const {
-      createOrder: { ok, orderId },
+      createOrder: { orderId },
     } = data;
     if (data.createOrder.ok) {
       navigate(`/orders/${orderId}`);
@@ -137,6 +137,9 @@ export const Restaurant = () => {
     onCompleted,
   });
   const triggerConfirmOrder = () => {
+    if (placingOrder) {
+      return;
+    }
     if (orderItems.length === 0) {
       alert("Can't place empty order");
       return;
