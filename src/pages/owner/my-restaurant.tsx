@@ -71,6 +71,7 @@ export const MyRestaurant = () => {
     if (subscriptionData.pendingOrders.id) {
       navigate(`/orders/${subscriptionData.pendingOrders.id}`);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subscriptionData]);
   return (
     <div>
