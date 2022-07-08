@@ -1,7 +1,6 @@
 import { gql, useQuery, useSubscription } from "@apollo/client";
 import React, { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Dish } from "../../components/dish";
 import {
   VictoryAxis,
   VictoryChart,
@@ -11,6 +10,7 @@ import {
   VictoryTooltip,
   VictoryVoronoiContainer,
 } from "victory";
+import { Dish } from "../../components/dish";
 import {
   DISH_FRAGMENT,
   FULL_ORDER_FRAGMENT,
