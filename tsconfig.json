@@ -20,6 +20,9 @@
     "noEmit": true,
     "jsx": "react",
     "strictNullChecks": false,
+    "typeRoots": [
+      "node_modules/@types",
+      ],
   },
   "include": [
     "src"

@@ -28,12 +28,12 @@ export const Dashboard = () => {
     <div>
       <div
         className="overflow-hidden"
-        style={{ width: window.innerWidth, height: "95vh" }}
+        style={{ width: window.innerWidth, height: "50vh" }}
       >
         <GoogleMapReact
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={onApiLoaded}
-          defaultZoom={15}
+          defaultZoom={16}
           draggable={false}
           defaultCenter={{
             lat: 36.58,
